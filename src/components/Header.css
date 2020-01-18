@@ -1,0 +1,21 @@
+header {
+    position: fixed;
+    width: 100vw;
+    height: 10vh;
+    background: #f2f2f2;
+    display:grid;
+    grid-auto-flow: column;
+    justify-content: center;
+    align-items: center;
+    gap:1rem;
+    z-index: 1;
+}
+
+header a {
+    text-decoration: none;
+    color: #2e2e2e;
+}
+
+[aria-current='page'] {
+    font-weight: bold;
+}

@@ -1,0 +1,19 @@
+input, textarea, label {
+    font-size:1rem;
+    padding:.5rem;
+    display:block;
+    margin-bottom:1rem;
+}
+
+textarea {
+    min-width: 60vw;
+    min-height: 6rem;
+}
+
+.edit img {
+    width:5rem;
+}
+
+.edit label {
+    padding: 0;
+}

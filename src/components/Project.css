@@ -1,0 +1,21 @@
+.project {
+    min-height: 350px;
+    padding:2rem;
+    background:#eee;
+    position:relative;
+}
+
+
+.project h1 {
+    font-size: 1.2rem;
+}
+
+.admin-icons{
+    position:absolute;
+    bottom:1rem;
+    right:1rem;
+}
+
+.project img {
+    width: 100%;
+}
