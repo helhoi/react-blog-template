@@ -63,7 +63,8 @@ const uploadSuccess = filename => {
             <h1>Edit project: {props.id}</h1>
             <form onSubmit={saveProject}>
                 <input type='text' onChange={updateValue} name='title' value={project.title}/>
-                <input onChange={updateValue} name='year' value={project.year}/>
+                <input onChange={updateValue} name='year' placeholder='year' value={project.year}/>
+                <input onChange={updateValue} name='byline' placeholder='short description' value={project.byline}/>
                 <textarea onChange={updateValue} name='description' value={project.description}/>
                 {
                 project.defaultImage && 

@@ -3,6 +3,9 @@ import firebase from './firebase'
 import Project from './Project'
 import './Projects.css'
 import { IoIosAddCircle } from 'react-icons/io'
+import {navigate} from '@reach/router'
+import ClipLoader from "react-spinners/ClipLoader"
+import Masonry from 'react-masonry-css'
 
 const Projects = (props) => {
     const [projects, setProjects] = useState([])
@@ -15,7 +18,7 @@ const Projects = (props) => {
         timestamp: firebase.firestore.FieldValue.serverTimestamp()      
 }
         )
-        .then( doc => console.log('added document with id', doc.id))
+        .then( doc => navigate('/edit/' + doc.id))
     }
      useEffect( () => {
         firebase
@@ -35,7 +38,25 @@ const Projects = (props) => {
                 <IoIosAddCircle className='edit-icons-add' onClick={addProject} />
             </div>
 }
-            <div className='projectsContainer'>
+
+            {
+                projects.length > 0
+                ?
+           
+                <Masonry
+                    breakpointCols = {
+                        {
+                    default: 3,
+                    1300: 2,
+                    1100: 1,
+                    
+                  }
+                }
+
+                className="my-masonry-grid"
+                columnClassName="my-masonry-grid_column">
+                {/* array of JSX items */}
+             
                 {
                     projects.map(
                         project => <Project 
@@ -45,7 +66,10 @@ const Projects = (props) => {
                         signedIn={props.signedIn}/>
                     )
                 }
-            </div>
+             </Masonry>
+            :
+            <ClipLoader />
+        }
         </main>
         
     )

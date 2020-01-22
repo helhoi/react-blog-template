@@ -35,13 +35,17 @@ button, .button {
   transform:scale(1.2);
   cursor: pointer;
   margin-left: 1rem;
+  color: #8C8987;
 }
 
 .edit-icons-add {
-  transform:scale(1.5);
+  transform:scale(1.7);
   cursor: pointer;
   margin-left: 1rem;
   margin-bottom:2rem;
+  position: fixed;
+  bottom: 2rem;
+  right: 4rem;
 }
 
 
