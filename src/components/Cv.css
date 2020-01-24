@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/css?family=Josefin+Sans:300&display=swap');
+
+.about h1{
+    font-size: 150px;
+    justify-content: start;
+    align-items: left;
+    position: fixed;
+    top: 0;
+    padding-top: 3rem;
+}
+
+.about p{
+    font-size: 20px;
+    text-align: left;
+    position: fixed;
+    width: 600px;
+    height: 600px;
+    padding-top:20rem;
+    font-weight: 100;
+    font-family: 'Josefin Sans', sans-serif;
+    
+}
+
+
+
+
+

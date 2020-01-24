@@ -5,6 +5,7 @@ import {Link } from '@reach/router'
 import parse from 'html-react-parser'
 
 const ProjectDetails = (props) => {
+
     const[project, setProject] = useState()
 
    useEffect( () => {
@@ -15,7 +16,7 @@ const ProjectDetails = (props) => {
             .onSnapshot( 
                snapshot => setProject(snapshot.data())
            )
-        }, [])
+        }, [props.id])
 
    return(
        <main className='project-details'>
@@ -23,6 +24,9 @@ const ProjectDetails = (props) => {
             project
             ?
         <div>
+            <p>
+            <Link to='/projects'>tilbake</Link>
+            </p>
             {
                 project.defaultImage &&
                 <img src={project.defaultImage} alt='default'/>

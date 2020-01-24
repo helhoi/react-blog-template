@@ -3,7 +3,7 @@ import './Project.css'
 import {MdDelete} from "react-icons/md"
 import {FaCode} from "react-icons/fa"
 import firebase from './firebase'
-import {Link } from '@reach/router'
+import {Link, navigate } from '@reach/router'
 import parse from 'html-react-parser'
 
 const Project = (props) => {
@@ -23,10 +23,10 @@ const Project = (props) => {
 
    
     return(
-        <div onClick={() => setActiveProject(!activeProject)} className={activeProject ?  'project active' : 'project'}>
+        <div className='project'>
             {
                 props.data.defaultImage &&
-                <img src={props.data.defaultImage} alt='default'/>
+                <img onClick={ () => navigate('/projects/' + props.id)} src={props.data.defaultImage} alt='default'/>
             }
             <h4>{props.data.title}</h4>
 
@@ -37,7 +37,7 @@ const Project = (props) => {
             <div className='byline'>
                 { props.data.byline}
             </div>
-            <Link to={'/projects/' +props.id}>se arbeid</Link>
+            <Link to={'/projects/' + props.id}></Link>
             {
                props.data.color && <p>farge: {props.data.color}</p>
             }

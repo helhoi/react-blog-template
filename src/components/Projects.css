@@ -4,6 +4,8 @@
     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
     gap:1rem;
     color: #f2f2f2;
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: 100;
 }
 
 .my-masonry-grid {

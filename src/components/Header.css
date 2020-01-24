@@ -33,7 +33,7 @@ header a {
     margin-left: 15px;
 }
 
-[aria-current='page'] {
+[aria-current='page'], .active {
     font-weight: bold;
 }
 
@@ -46,7 +46,7 @@ header p{
 
 @media (max-width: 1000px){
     header{
-        width:100%;
+        width:25%;
         transform: translateY(-100%);
         grid-auto-flow: row;
         align-content: center;
@@ -68,6 +68,10 @@ header p{
     .burger{
         display:block;
         cursor: pointer;
+        position: absolute;
+        left: 0;
+        top: 10;
+        margin-left: 20px;
     }
 
     main {
