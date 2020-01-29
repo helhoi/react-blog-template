@@ -4,3 +4,9 @@
     grid-template-columns: repeat(auto-fit, minmax(600px, 1fr));
     gap:1rem;
 }
+
+@media (max-width: 600px){
+    .projectsContainer {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+    }
+}

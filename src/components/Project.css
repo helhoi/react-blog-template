@@ -1,13 +1,11 @@
 .project {
     font-family: 'Josefin Sans', sans-serif;
     font-weight: 100;
-    color:red;
+    color:#8C8987;
     min-height: 350px;
     padding:1rem;
     position: relative;
     margin-bottom: 20px;
-    font-family: 'Josefin Sans', sans-serif;
-    font-weight: 100;
     cursor: pointer;
   
 }
