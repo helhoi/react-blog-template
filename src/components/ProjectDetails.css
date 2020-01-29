@@ -1,0 +1,19 @@
+main.project-details {
+    position: relative;
+    justify-content: center;
+    text-align: justify;
+    line-height: 1.9;
+    margin-bottom: 30px;
+    word-break: break-all;
+}
+
+.project-details .description{
+    width:100%;
+} 
+.project-details .description img{
+    width:100%;
+} 
+
+.project-details h4{
+    text-align: center;
+} 

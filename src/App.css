@@ -17,9 +17,14 @@ a {
 
 main {
   min-height: 100vh;
+  max-width: 100vw;
   display: grid;
   place-items: center;
   padding:20vh;
+}
+
+main.projects, main.project-details{
+  padding:20vh 0;
 }
 
 button, .button {

@@ -10,7 +10,7 @@
 
 .burger{
     display: none;
-    z-index: 3;
+    z-index: 4;
     position: absolute;
 }
 
@@ -46,15 +46,23 @@ header p{
 
 @media (max-width: 1000px){
     header{
-        width:25%;
+        width:50%;
         transform: translateY(-100%);
         grid-auto-flow: row;
         align-content: center;
         justify-content: center;
         min-height: 100vh;
+        width: 100vw;
         background:#f2f2f2;
-        transition: 1s ease;
+        /*transition: 1s ease;*/
     }
+    .navn{
+        position: absolute;
+        top: 5vh;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
 
     .header a {
         font-size: 2rem;
@@ -62,7 +70,6 @@ header p{
 
     header.visible{
         transform:translateY(0);
-       
     }
 
     .burger{

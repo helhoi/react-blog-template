@@ -5,7 +5,6 @@ import './Projects.css'
 import { IoIosAddCircle } from 'react-icons/io'
 import {navigate} from '@reach/router'
 import ClipLoader from "react-spinners/ClipLoader"
-import Masonry from 'react-masonry-css'
 
 const Projects = (props) => {
     const [projects, setProjects] = useState([])
@@ -31,7 +30,7 @@ const Projects = (props) => {
     }, [])
 
     return(
-        <main>
+        <main className='projects'>
            { 
            props.signedIn &&
             <div className='add'>
@@ -41,32 +40,18 @@ const Projects = (props) => {
 
             {
                 projects.length > 0
-                ?
-           
-                <Masonry
-                    breakpointCols = {
-                        {
-                    default: 3,
-                    1300: 2,
-                    1100: 1,
-                    
-                  }
-                }
-
-                className="my-masonry-grid"
-                columnClassName="my-masonry-grid_column">
-                {/* array of JSX items */}
-             
-                {
-                    projects.map(
-                        project => <Project 
-                        key={project.id}
-                        data={project.data()}
-                        id={project.id}
-                        signedIn={props.signedIn}/>
-                    )
-                }
-             </Masonry>
+                ?             
+                <div className='projectsContainer'>
+                    {
+                        projects.map(
+                            project => <Project 
+                            key={project.id}
+                            data={project.data()}
+                            id={project.id}
+                            signedIn={props.signedIn}/>
+                        )
+                    }
+                </div>
             :
             <ClipLoader />
         }

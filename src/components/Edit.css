@@ -7,7 +7,7 @@ input, textarea, label {
 
 textarea {
     min-width: 60vw;
-    min-height: 6rem;
+    min-height: 16rem;
 }
 
 .edit img {

@@ -3,8 +3,10 @@ import './Project.css'
 import firebase from './firebase'
 import {Link } from '@reach/router'
 import parse from 'html-react-parser'
+import './ProjectDetails.css'
 
 const ProjectDetails = (props) => {
+    window.scrollTo(0,0)
 
     const[project, setProject] = useState()
 
@@ -18,19 +20,27 @@ const ProjectDetails = (props) => {
            )
         }, [props.id])
 
-   return(
-       <main className='project-details'>
-           {
+        let styles = {}
+
+        if(project){
+            styles = {
+                backgroundImage: 'url(' + project.defaultImage + ')',
+                backgroundAttachment: 'fixed',
+                backgroundSize: 'cover',
+                backgroundPosition: 'center 40%',
+                paddingTop: '100vh',
+                paddingBottom: '0'
+            }
+        } 
+    return(
+       <main
+            style={styles} 
+            className='project-details'>
+            {
             project
             ?
-        <div>
-            <p>
-            <Link to='/projects'>tilbake</Link>
-            </p>
-            {
-                project.defaultImage &&
-                <img src={project.defaultImage} alt='default'/>
-            }
+        <div style={{backgroundColor:'white', padding:'20vh 20vh 0 20vh', minHeight:'100vh'}}>
+            
             <h4>{project.title}</h4>
 
             <div className='year'>
@@ -40,7 +50,9 @@ const ProjectDetails = (props) => {
             <div className='description'>
                 {project.description && parse(project.description )}
             </div>
-            
+            <div className='backlink'>
+               <Link to='/projects'>tilbake</Link>
+            </div>
            </div>
            :
            <h2>Fetching projects, hold on</h2>
