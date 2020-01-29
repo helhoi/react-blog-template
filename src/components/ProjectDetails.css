@@ -17,3 +17,20 @@ main.project-details {
 .project-details h4{
     text-align: center;
 } 
+
+.pager {
+    
+    width:80vw;
+    left:0;
+    bottom: 5vh;
+    height: 10vh;
+    display:grid;
+    grid-auto-flow: column;
+    gap:4rem;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1;
+
+
+
+}

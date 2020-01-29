@@ -45,7 +45,7 @@ button, .button {
 }
 
 .edit-icons-add {
-  transform:scale(1.7);
+  transform:scale(3);
   cursor: pointer;
   margin-left: 1rem;
   margin-bottom:2rem;

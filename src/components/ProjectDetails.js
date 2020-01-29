@@ -9,6 +9,8 @@ const ProjectDetails = (props) => {
     window.scrollTo(0,0)
 
     const[project, setProject] = useState()
+    const[prev,setPrev] = useState()
+    const[next,setNext] = useState()
 
    useEffect( () => {
             firebase
@@ -18,6 +20,21 @@ const ProjectDetails = (props) => {
             .onSnapshot( 
                snapshot => setProject(snapshot.data())
            )
+        }, [props.id])
+
+        useEffect( () => {
+            firebase
+            .firestore()
+            .collection('projects')
+            .orderBy('title')
+            .get()
+            .then( projects => {
+                const array = projects.docs.map( doc => doc.id)
+                const myPos = array.indexOf(props.id)
+                setNext( myPos + 1 === array.length ? array[0] : array[myPos + 1]) 
+                setPrev( myPos === 0 ? array[array.length - 1]  : array[myPos - 1]) 
+            })
+           
         }, [props.id])
 
         let styles = {}
@@ -50,9 +67,11 @@ const ProjectDetails = (props) => {
             <div className='description'>
                 {project.description && parse(project.description )}
             </div>
-            <div className='backlink'>
-               <Link to='/projects'>tilbake</Link>
+            <div className='pager'>
+                <Link to={'/projects/' + prev}>forrige</Link>
+                <Link to={'/projects/' + next}>neste</Link>
             </div>
+            
            </div>
            :
            <h2>Fetching projects, hold on</h2>

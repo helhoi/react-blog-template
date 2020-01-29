@@ -18,3 +18,10 @@ textarea {
 .edit label {
     padding: 0;
 }
+
+.checks {
+    display:grid;
+    grid-template-columns: 1fr 4fr;
+    margin: 1rem 0 1rem 0;
+    padding: .6rem;
+}

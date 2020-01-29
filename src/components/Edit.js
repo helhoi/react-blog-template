@@ -27,11 +27,37 @@ const saveProject = (e) => {
 const updateValue = 
     e => {
     e.persist()
-    setProject( 
-        existingProject => ({
-        ...existingProject,
-        [e.target.name]: e.target.value
-    }))
+
+switch(e.target.type){
+    case 'checkbox': { 
+        setProject( 
+            existingProject => ({
+            ...existingProject,
+            [e.target.name]: e.target.checked
+        }))
+    break;
+    }
+
+    case 'text' : {
+        setProject( 
+            existingProject => ({
+            ...existingProject,
+            [e.target.name]: e.target.checked
+        }))
+        break; 
+    }
+
+    default: {
+        setProject( 
+            existingProject => ({
+            ...existingProject,
+            [e.target.name]: e.target.checked
+        }))
+        break;
+    }
+}
+
+    
 }
 
 const uploadStart = () => {
@@ -62,14 +88,27 @@ const uploadSuccess = filename => {
         <main className='edit'>
             <h1>Edit project: {props.id}</h1>
             <form onSubmit={saveProject}>
-                <input type='text' onChange={updateValue} name='title' value={project.title}/>
-                <input onChange={updateValue} name='year' placeholder='year' value={project.year}/>
-                <input onChange={updateValue} name='byline' placeholder='short description' value={project.byline}/>
-                <textarea onChange={updateValue} name='description' value={project.description}/>
+                <input name='title' type='text' onChange={updateValue} value={project.title}/>
+                <input name='year' onChange={updateValue} placeholder='year' value={project.year}/>
+                <input name='byline' onChange={updateValue} placeholder='short description' value={project.byline}/>
+
+                <div className='checks'>    
+                  <label htmlFor='html'>html</label>
+                  <input name='html' id='html' type='checkbox' onChange={updateValue} defaultChecked={project.html}/>
+
+                  <label htmlFor='javascript'>javascript</label>
+                  <input name='javascript' id='javascript' type='checkbox' onChange={updateValue} defaultChecked={project.javascript}/>
+
+                  <label htmlFor='userOrientedDesign'>user-oriented-design</label>
+                  <input name='userOrientedDesign' id='userOrientedDesign' type='checkbox' onChange={updateValue} defaultChecked={project.userOrientedDesign}/>
+                </div>
+
+                <textarea name='description' onChange={updateValue} value={project.description}/>
                 {
                 project.defaultImage && 
                 <img src={project.defaultImage} alt='default'/>
                 }
+
                 <label>
                  <div className='button'>{project.defaultImage ? 'replace' : 'upload'}</div>
                 <FileUploader
