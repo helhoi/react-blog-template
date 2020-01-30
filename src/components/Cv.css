@@ -23,6 +23,14 @@
     
 }
 
+.about img {
+    position: fixed;
+    align-items: right;
+    height: 75%;
+    padding-right: 10%;
+
+}
+
 
 
 

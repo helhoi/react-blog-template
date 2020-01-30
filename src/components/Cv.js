@@ -12,6 +12,7 @@ const Cv = () => {
             Risus nisl venenatis convallis nisl phasellus sit est, velit pellentesque. Nunc, ut scelerisque diam mi vitae ut tem.
             pus, urna nullam. Non, ultrices id dolor vestibulum mattis.
             <br></br><br></br>helenehoie@gmail.com 81549300</p>
+            <img src='../images/profilbilde.png'/>
         </main>
         
     )
