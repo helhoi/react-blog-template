@@ -7,15 +7,33 @@ main.project-details {
     word-break: break-all;
 }
 
-.project-details .description{
-    width:100%;
+.description p, .description a, .project-details .year{
+    width: 35%;
+    display:block;
+    margin: auto;
+    font-size: 18px;
+    max-width: 360px;
 } 
+
+
 .project-details .description img{
     width:100%;
 } 
 
 .project-details h4{
     text-align: center;
+} 
+
+.project-details h6{
+    width: 35%;
+    display:block;
+    margin: auto;
+    max-width: 360px;
+} 
+
+.project-details .description a{
+    padding-top: 3rem;
+    width:10%;
 } 
 
 .pager {

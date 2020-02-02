@@ -54,7 +54,6 @@ header p{
         min-height: 100vh;
         width: 100vw;
         background:#f2f2f2;
-        /*transition: 1s ease;*/
     }
     .navn{
         position: absolute;
@@ -70,6 +69,7 @@ header p{
 
     header.visible{
         transform:translateY(0);
+        transition: 1s ease;
     }
 
     .burger{

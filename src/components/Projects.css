@@ -1,9 +1,26 @@
+main.projects{
+    padding:12vh 1rem;
+  }
+
 .projectsContainer {
-    max-width: 100%;
     display:grid;
+    width: 100%;
     grid-template-columns: repeat(auto-fit, minmax(600px, 1fr));
-    gap:1rem;
+    gap:.6rem;   
 }
+
+.edit-icons-add {
+    transform:scale(10);
+    fill:rgba(0,0,0,.8);
+    cursor: pointer;
+    margin-left: 1rem;
+    margin-bottom:2rem;
+    position: fixed;
+    bottom: 4rem;
+    right: 4rem;
+    z-index:2;
+  }
+  
 
 @media (max-width: 600px){
     .projectsContainer {

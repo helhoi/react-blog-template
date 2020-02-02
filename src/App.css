@@ -23,7 +23,7 @@ main {
   padding:20vh;
 }
 
-main.projects, main.project-details{
+main.project-details{
   padding:20vh 0;
 }
 
@@ -44,15 +44,6 @@ button, .button {
   color: #8C8987;
 }
 
-.edit-icons-add {
-  transform:scale(3);
-  cursor: pointer;
-  margin-left: 1rem;
-  margin-bottom:2rem;
-  position: fixed;
-  bottom: 2rem;
-  right: 4rem;
-}
 
 
 .button {

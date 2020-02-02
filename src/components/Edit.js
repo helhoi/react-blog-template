@@ -2,6 +2,7 @@ import React, {useState, useEffect} from 'react'
 import firebase from './firebase'
 import './Edit.css'
 import FileUploader from "react-firebase-file-uploader"
+import {Link} from '@reach/router'
 
 const Edit = (props) => {
 
@@ -42,7 +43,7 @@ switch(e.target.type){
         setProject( 
             existingProject => ({
             ...existingProject,
-            [e.target.name]: e.target.checked
+            [e.target.name]: e.target.value
         }))
         break; 
     }
@@ -51,7 +52,7 @@ switch(e.target.type){
         setProject( 
             existingProject => ({
             ...existingProject,
-            [e.target.name]: e.target.checked
+            [e.target.name]: e.target.value
         }))
         break;
     }
@@ -124,6 +125,7 @@ const uploadSuccess = filename => {
                 <button type='submit'>Save</button>
             </form>
             <p>{status}</p>
+            <Link to={'/projects/' + props.id}>view</Link>
         </main>
     )
     }

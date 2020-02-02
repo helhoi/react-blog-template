@@ -4,11 +4,8 @@ import {MdDelete} from "react-icons/md"
 import {FaCode} from "react-icons/fa"
 import firebase from './firebase'
 import {Link, navigate } from '@reach/router'
-import parse from 'html-react-parser'
 
 const Project = (props) => {
-
-    const [activeProject, setActiveProject] = useState(false)
 
     const deleteProject = () => {
         if(window.confirm('sure')){
@@ -24,23 +21,15 @@ const Project = (props) => {
    
     return(
         <div className='project'>
+            <div className='bilde' onClick={() => navigate('./projects/' + props.id)}>
             {
-                props.data.defaultImage &&
-                <img onClick={ () => navigate('/projects/' + props.id)} src={props.data.defaultImage} alt='default'/>
+                props.data.defaultImage && 
+                <img src={props.data.defaultImage} alt='cover' />
             }
-            <h4>{props.data.title}</h4>
-
-            <div className='year'>
-                { props.data.year }
             </div>
-
-            <div className='byline'>
-                { props.data.byline}
+            <div className='project-title'>
+                <div>{props.data.title}</div>
             </div>
-            <Link to={'/projects/' + props.id}></Link>
-            {
-               props.data.color && <p>farge: {props.data.color}</p>
-            }
             {
                 props.signedIn && 
                 <div className='admin-icons'>
