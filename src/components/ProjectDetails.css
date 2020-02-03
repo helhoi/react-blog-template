@@ -60,8 +60,52 @@ main.project-details {
     align-items: center;
     justify-content: space-between;
     z-index: 1;
-
-
-
 }
 
+@media(max-width:1340px){
+.project-details .description a{
+    padding-top: 3rem;
+    width:20%;
+} 
+}
+
+@media(max-width:900px){
+.description p, .description a, .project-details .year{
+    width: 55%;
+    display:block;
+    margin: auto;
+    font-size: 18px;
+    max-width: 360px;
+} 
+
+@media(max-width:700px){
+    .project-details .description a{
+        padding-top: 3rem;
+        width:30%;
+    } 
+    }
+
+.project-details h6{
+    width: 55%;
+    display:block;
+    margin: auto;
+    max-width: 360px;
+} 
+}
+
+@media(max-width:600px){
+    .description p, .description a, .project-details .year{
+        width: 85%;
+        display:block;
+        margin: auto;
+        font-size: 18px;
+        max-width: 360px;
+    } 
+
+    .project-details h6{
+        width: 85%;
+        display:block;
+        margin: auto;
+        max-width: 360px;
+    } 
+    }
