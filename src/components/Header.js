@@ -29,7 +29,7 @@ const Header = (props) => {
             </div>
             <header className={ show ? 'visible' : ''} onClick={ () => setShow(false)}>
                 <Link to={process.env.PUBLIC_URL + '/'} className='navn'>helene næsheim</Link>
-                <Link getProps={isPartiallyActive} to={process.env.PUBLIC_URL + '/projects'}>arbeider</Link>
+                <Link to={process.env.PUBLIC_URL + '/projects'} getProps={isPartiallyActive}>arbeider</Link>
                 <Link to={process.env.PUBLIC_URL + '/cv'}>om meg</Link>    
     </header>
     </div>

@@ -21,7 +21,7 @@ const Project = (props) => {
    
     return(
         <div className='project'>
-            <div className='bilde' onClick={() => navigate('/projects/' + props.id)}>
+            <div className='bilde' onClick={() => navigate(process.env.PUBLIC_URL + '/projects/' + props.id)}>
             {
                 props.data.defaultImage && 
                 <img src={props.data.defaultImage} alt='cover' />

@@ -12,9 +12,8 @@ import Edit from './components/Edit'
 import firebase from  './components/firebase'
 
 
-
 const Default = () => {
-  navigate('/projects')
+  navigate(process.env.PUBLIC_URL + '/projects')
   return <></>
 }
 
@@ -51,7 +50,6 @@ const App = () => {
      </Router>
    </div>
 
-   
   )
 
 }
