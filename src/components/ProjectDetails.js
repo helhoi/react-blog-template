@@ -1,12 +1,17 @@
-import React, {useState, useEffect} from 'react'
+import React, {useState, useEffect, useRef} from 'react'
 import './Project.css'
 import firebase from './firebase'
-import {Link } from '@reach/router'
+import {Link, navigate } from '@reach/router'
 import parse from 'html-react-parser'
 import './ProjectDetails.css'
+import {IoIosArrowDown, IoIosGrid} from "react-icons/io"
+
 
 const ProjectDetails = (props) => {
     window.scrollTo(0,0)
+
+    let textTop = useRef()
+    let parallaxHeight = useRef()
 
     const[project, setProject] = useState()
     const[prev,setPrev] = useState()
@@ -45,20 +50,31 @@ const ProjectDetails = (props) => {
                 backgroundAttachment: 'fixed',
                 backgroundSize: 'cover',
                 backgroundPosition: 'center 40%',
-                paddingTop: '100vh',
-                paddingBottom: '0'
+                minHeight: '100vh',
+                width: '100vw',
+                position:'relative',
+                top:0,
+                display:'grid',
+                alignItems:'end'
             }
         } 
+        const hitTop = () => {
+            let textRect = textTop.current.getBoundingClientRect()
+            let parallaxRect = parallaxHeight.current.getBoundingClientRect()
+            console.log(parallaxRect.height)
+            window.scrollTo(0, (parallaxRect.height))
+        }
     return(
-       <main
-            style={styles} 
-            className='project-details'>
+       <main className='project-details'>
+           <div ref={parallaxHeight} className='parallax' style={styles}>
+                <IoIosArrowDown onClick={ hitTop} className='arrow-down'/>
+           </div>
             {
             project
             ?
-        <div style={{backgroundColor:'white', padding:'20vh 20vh 0 20vh', minHeight:'100vh'}}>
+        <div style={{paddingTop:'100vh',backgroundColor:'white', padding:'20vh 20vh 0 20vh', minHeight:'100vh'}}>
             
-            <h4>{project.title}</h4>
+            <h4 ref={textTop}>{project.title}</h4>
 
             <div className='year'>
                 { project.year}

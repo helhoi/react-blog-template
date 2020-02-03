@@ -31,12 +31,8 @@ const Header = (props) => {
                 <Link to='/' className='navn'>helene næsheim</Link>
                 <Link getProps={isPartiallyActive} to='/projects'>arbeider</Link>
                 <Link to='/cv'>om meg</Link>
-                <Link to='/login'>
-            {
-                props.signedIn
-                ? 'profile'
-                : 'login'
-            }   </Link>
+                <Link to='/login'>login</Link>
+    
     </header>
     </div>
     )

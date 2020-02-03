@@ -1,3 +1,4 @@
+
 main.project-details {
     position: relative;
     justify-content: center;
@@ -5,6 +6,17 @@ main.project-details {
     line-height: 1.9;
     margin-bottom: 30px;
     word-break: break-word;
+    padding-top:0;
+}
+
+.arrow-down{
+    width:100vw;
+    text-align:center;
+    transform:scale(2);
+    position:absolute;
+    bottom:2rem;
+    fill:white;
+    cursor: pointer;
 }
 
 .description p, .description a, .project-details .year{
@@ -52,3 +64,4 @@ main.project-details {
 
 
 }
+

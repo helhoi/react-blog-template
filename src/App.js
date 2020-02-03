@@ -15,7 +15,7 @@ import firebase from  './components/firebase'
 
 const Default = () => {
   navigate('/projects')
-  return(<></>)
+  return <></>
 }
 
 const App = () => {
@@ -41,8 +41,8 @@ const App = () => {
    <div>
     <Header signedIn={signedIn}/>
      <Router>
-       <Default path='/'/>
-       <Projects signedIn={signedIn} path='/projects' />
+       <Default path='/' />
+       <Projects default signedIn={signedIn} path='/projects' />
        <Contact path='/contact' />
        <ProjectDetails path='/projects/:id'/>
        <Cv path='/cv' />
