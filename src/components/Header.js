@@ -11,7 +11,8 @@ const Header = (props) => {
     const isPartiallyActive = ({
         isPartiallyCurrent
     }) => {
-        return isPartiallyCurrent 
+        let active = (document.location.href.lastIndexOf('/')) === (document.location.href.length - 1) ? 'active':''
+        return isPartiallyCurrent || active 
         ? { className : 'active'}
         : null
     }
@@ -28,7 +29,7 @@ const Header = (props) => {
                 }
             </div>
             <header className={ show ? 'visible' : ''} onClick={ () => setShow(false)}>
-                <Link to={process.env.PUBLIC_URL + '/'} className='navn'>helene næsheim</Link>
+                <a href={process.env.PUBLIC_URL + '/'} className='navn'>helene næsheim</a>
                 <Link to={process.env.PUBLIC_URL + '/projects'} getProps={isPartiallyActive}>arbeider</Link>
                 <Link to={process.env.PUBLIC_URL + '/cv'}>om meg</Link>    
     </header>

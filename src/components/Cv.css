@@ -43,6 +43,12 @@ main.about{
     object-fit:cover;
 }
 
+.space-between{
+    display:grid;
+    grid-auto-flow: column;
+    justify-content: space-between;
+}
+
 @media(max-width:1000px){
     .about h1{
         font-size: 4rem;

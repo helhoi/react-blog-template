@@ -40,7 +40,6 @@ const App = () => {
    <div>
     <Header signedIn={signedIn}/>
      <Router basepath={process.env.PUBLIC_URL}>
-       <Default path='/' />
        <Projects default signedIn={signedIn} path='/projects' />
        <Contact path='/contact' />
        <ProjectDetails path='/projects/:id'/>
