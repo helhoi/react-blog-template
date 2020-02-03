@@ -125,7 +125,7 @@ const uploadSuccess = filename => {
                 <button type='submit'>Save</button>
             </form>
             <p>{status}</p>
-            <Link to={'/projects/' + props.id}>view</Link>
+            <Link to={process.env.PUBLIC_URL + '/projects/' + props.id}>view</Link>
         </main>
     )
     }

@@ -33,8 +33,8 @@ const Project = (props) => {
             {
                 props.signedIn && 
                 <div className='admin-icons'>
-                    <Link to={'/edit/' + props.id} >
-                    <FaCode  className='edit-icons'/>
+                    <Link to={process.env.PUBLIC_URL +  '/edit/' + props.id} >
+                        <FaCode  className='edit-icons'/>
                     </Link>
                    
                     <MdDelete onClick={deleteProject} className='edit-icons'/>

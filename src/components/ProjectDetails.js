@@ -1,7 +1,7 @@
 import React, {useState, useEffect, useRef} from 'react'
 import './Project.css'
 import firebase from './firebase'
-import {Link, navigate } from '@reach/router'
+import {Link } from '@reach/router'
 import parse from 'html-react-parser'
 import './ProjectDetails.css'
 import {IoIosArrowDown, IoIosGrid} from "react-icons/io"
@@ -84,8 +84,8 @@ const ProjectDetails = (props) => {
                 {project.description && parse(project.description )}
             </div>
             <div className='pager'>
-                <Link to={'/projects/' + prev}>forrige</Link>
-                <Link to={'/projects/' + next}>neste</Link>
+                <Link to={process.env.PUBLIC_URL +  '/projects/' + prev}>forrige</Link>
+                <Link to={process.env.PUBLIC_URL +  '/projects/' + next}>neste</Link>
             </div>
             
            </div>
