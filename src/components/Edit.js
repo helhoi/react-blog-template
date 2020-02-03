@@ -122,10 +122,10 @@ const uploadSuccess = filename => {
                 onProgress={handleProgress}
                 />
                 </label>
-                <button type='submit'>Save</button>
+                <button type='submit'>Lagre</button>
             </form>
             <p>{status}</p>
-            <Link to={process.env.PUBLIC_URL + '/projects/' + props.id}>view</Link>
+            <Link to={process.env.PUBLIC_URL + '/projects/' + props.id}>vis</Link>
         </main>
     )
     }
