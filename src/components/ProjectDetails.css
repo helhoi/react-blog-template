@@ -13,7 +13,7 @@ main.project-details {
     width:100vw;
     text-align:center;
     transform:scale(2);
-    position:absolute;
+    position:fixed;
     bottom:2rem;
     fill:white;
     cursor: pointer;
@@ -49,7 +49,6 @@ main.project-details {
 } 
 
 .pager {
-    
     width:80vw;
     left:0;
     bottom: 5vh;
