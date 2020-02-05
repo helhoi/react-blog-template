@@ -17,7 +17,7 @@ main.about{
 
 
 .about h1{
-    font-size: 10rem;
+    font-size: 9rem;
     padding:0;
     margin:0;
     color: goldenrod;
@@ -41,6 +41,7 @@ main.about{
     max-height:100%;
     height:100%;
     object-fit:cover;
+    object-position: center top;
 }
 
 .space-between{
@@ -50,7 +51,7 @@ main.about{
 
 @media(max-width:1000px){
     .about h1{
-        font-size: 4rem;
+        font-size: 5rem;
     } 
 }
 
@@ -66,14 +67,18 @@ main.about{
         grid-row-start: 2;
     }
 
-    
     .about h1{
-        font-size: 5rem;
+        font-size: 6.5rem;
         padding:0;
         margin:0;
         color: goldenrod;
         
+        
     }
+    .about img {
+        object-position: center 15%;
+    }
+    
 }
 
 

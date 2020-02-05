@@ -49,7 +49,6 @@ const ProjectDetails = (props) => {
                 backgroundImage: 'url(' + project.defaultImage + ')',
                 backgroundAttachment: 'fixed',
                 backgroundSize: 'cover',
-                backgroundPosition: 'center 40%',
                 minHeight: '100vh',
                 width: '100vw',
                 position:'relative',
