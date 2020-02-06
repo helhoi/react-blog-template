@@ -34,26 +34,33 @@ main.project-details {
     bottom: 3rem;
 }
 
+
+/* Footer on project text */
+
+.text-footer{
+    display:grid;
+    width:100%;
+    grid-template-columns: 1fr 360px 1fr;
+}
+.text-footer .middle{
+    display:grid;
+    grid-auto-flow:column;
+    justify-content: space-between;
+}
+
+.description h5, .description h3{
+    font-size: 15px;
+    display:inline;
+    margin:0;
+    padding:0;
+}
 .description h5 {
-    margin: auto;
-    font-size: 15px;
-    max-width: 200px;
     font-weight: 600;
-    display: inline-block;
-   
-
 }
-
 .description h3 {
-    font-size: 15px;
-    max-width: 100px;
-    bottom: 4rem;
     font-weight: 100;
-    display: inline-block;
-    margin-left: 25rem;
-   
-
 }
+
 
 .project-details .description img {
     width: 100%;

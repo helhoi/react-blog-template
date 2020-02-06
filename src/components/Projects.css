@@ -1,5 +1,5 @@
 main.projects{
-    padding:12vh 1rem;
+    padding:calc(10vh + .6rem) .6rem;
   }
 
 .projectsContainer {
