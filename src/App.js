@@ -21,6 +21,17 @@ const App = () => {
 
 
     const [signedIn, setSignedIn] = useState(false)
+    const [projects, setProjects] = useState([])
+
+    useEffect( () => {
+      firebase
+      .firestore()
+      .collection('projects')
+      .orderBy('title')
+      .onSnapshot(
+          snapshot => setProjects(snapshot.docs)
+      )
+  }, [])
 
   
     useEffect( () => {
@@ -40,7 +51,7 @@ const App = () => {
    <div>
     <Header signedIn={signedIn}/>
      <Router basepath={process.env.PUBLIC_URL}>
-       <Projects default signedIn={signedIn} path='/projects' />
+       <Projects projects={projects} default signedIn={signedIn} path='/projects' />
        <Contact path='/contact' />
        <ProjectDetails path='/projects/:id'/>
        <Cv path='/cv' />

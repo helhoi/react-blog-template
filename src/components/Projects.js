@@ -7,7 +7,7 @@ import {navigate} from '@reach/router'
 import ClipLoader from "react-spinners/ClipLoader"
 
 const Projects = (props) => {
-    const [projects, setProjects] = useState([])
+    
 
 
     const addProject = () => {
@@ -19,15 +19,7 @@ const Projects = (props) => {
         )
         .then( doc => navigate(process.env.PUBLIC_URL + '/edit/' + doc.id))
     }
-     useEffect( () => {
-        firebase
-        .firestore()
-        .collection('projects')
-        .orderBy('title')
-        .onSnapshot(
-            snapshot => setProjects(snapshot.docs)
-        )
-    }, [])
+     
 
     return(
         <main className='projects'>
@@ -39,11 +31,11 @@ const Projects = (props) => {
 }
 
             {
-                projects.length > 0
+                props.projects.length > 0
                 ?             
                 <div className='projectsContainer'>
                     {
-                        projects.map(
+                        props.projects.map(
                             project => <Project 
                             key={project.id}
                             data={project.data()}
