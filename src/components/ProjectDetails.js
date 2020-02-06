@@ -89,7 +89,7 @@ const ProjectDetails = (props) => {
             
            </div>
            :
-           <h2>Fetching projects, hold on</h2>
+           <h2>Henter prosjekter - vennligst vent</h2>
         }
            </main>
    

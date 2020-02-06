@@ -17,11 +17,11 @@ const Edit = (props) => {
     }, [props.id] )
 
 const saveProject = (e) => {
-    setStatus('updating project, please hold')
+    setStatus('oppdaterer prosjektet, vennligst vent')
     e.preventDefault()
     firebase.firestore().collection('projects').doc(props.id)
         .update(project)
-        .then( () => setStatus('project updated'))
+        .then( () => setStatus('prosjektet er oppdatert'))
         .catch( error => {console.log(error.message)})
 }
 
